@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+    <script>
+  
+        function validateForm(){
+      var name=document.forms["form"]["name"].value
+      if(name== "")
+      {
+          var not_name=document.getElementById("not_name")
+          not_name.style.display="block";
+          return false;
+      }
+      var sub=document.forms["form"]["subject1"].value
+      if(sub== "")
+      {
+          var not_name=document.getElementById("not_sub1")
+          not_name.style.display="block";
+          return false;
+      }
+      var sub=document.forms["form"]["subject2"].value
+      if(sub== "")
+      {
+          var not_name=document.getElementById("not_sub2")
+          not_name.style.display="block";
+          return false;
+      }
+      var sub=document.forms["form"]["subject3"].value
+      if(sub== "")
+      {
+          var not_name=document.getElementById("not_sub3")
+          not_name.style.display="block";
+          return false;
+      }
+      var sub=document.forms["form"]["subject4"].value
+      if(sub== "")
+      {
+          var not_name=document.getElementById("not_sub4")
+          not_name.style.display="block";
+          return false;
+      }
+  }
+
+      </script>
+    
+</head>
+<body>
+    <header>
+        <div class="container-fluid">
+            <div class="row">
+                <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+                    <div class="container-md">
+                      <a class="navbar-brand" >Add And View the Mark</a>
+                    </div>
+                  </nav>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col md-6">
+
+                    <form onsubmit="return validateForm()"  action="/submitMark" method="POST" name="form"  class="" style="margin-left:250px;width: 500px;">
+                        <label style="margin-left: 2000px; margin-top: 50px;">Add Marks</label>
+                        <div>
+                            <select name="name" class="form-select" aria-label="Default select example">
+                                <option  selected>Name</option>
+                               
+                                {{#each data}}
+                                <option  value="{{this.name}}">{{this.name}}</option>
+                             
+                                {{/each}}
+                              </select>
+                              <label id="not_name" style="display: none;">Name Cannot be empty</label>
+                        </div>
+                        <div></div>
+                        <div>
+                            <select name="subject1" class="form-select mt-2" aria-label="Default select example">
+                                <option selected> subject</option>
+                                
+                                {{#each sub}}
+                                <option value="{{this.subject1}}" >{{this.subject1}}</option>
+                             
+                                {{/each}}
+                              </select>
+                        </div>
+                        <div> <input type="text" name="mark1" class="form-control mt-1" ></div>
+                        <label id="not_sub1" style="display: none;">mark Cannot be empty</label>
+                        <div>
+                            <select name="subject2" class="form-select mt-2" aria-label="Default select example">
+                                <option selected> subject</option>
+                                
+                                {{#each sub}}
+                                <option value="{{this.subject2}}" >{{this.subject2}}</option>
+                             
+                                {{/each}}
+                              </select>
+                        </div>
+                        <div> <input type="text" name="mark2" class="form-control mt-1" ></div>
+                        <label id="not_sub2" style="display: none;">mark Cannot be empty</label>
+                        <div>
+                            <select name="subject3" class="form-select mt-2" aria-label="Default select example">
+                                <option selected> subject</option>
+                                
+                                {{#each sub}}
+                                <option value="{{this.subject3}}" >{{this.subject3}}</option>
+                             
+                                {{/each}}
+                              </select>
+                        </div>
+                        <div> <input type="text" name="mark3" class="form-control mt-1" ></div>
+                        <label id="not_sub3" style="display: none;">mark Cannot be empty</label>
+                        <div>
+                            <select name="subject4" class="form-select mt-2" aria-label="Default select example">
+                                <option selected>subject</option>
+                                
+                                {{#each sub}}
+                                <option value="{{this.subject4}}" >{{this.subject4}}</option>
+                             
+                                {{/each}}
+                              </select>
+                        </div>
+
+                        <div> <input type="text" name="mark4" class="form-control mt-1" ></div>
+                        <label id="not_sub4" style="display: none;">mark Cannot be empty</label>
+
+                        <div>
+                            <select name="subject5" class="form-select mt-2" aria-label="Default select example">
+                                <option selected>subject</option>
+                                
+                                {{#each sub}}
+                                <option value="{{this.subject5}}" >{{this.subject5}}</option>
+                             
+                                {{/each}}
+                              </select>
+                        </div>
+
+                        <div> <input type="text" name="mark5" class="form-control mt-1" ></div>
+                        <label id="not_sub4" style="display: none;">mark Cannot be empty</label>
+                        <div>
+                            <select name="subject6" class="form-select mt-2" aria-label="Default select example">
+                                <option selected>subject</option>
+                                
+                                {{#each sub}}
+                                <option value="{{this.subject6}}" >{{this.subject6}}</option>
+                             
+                                {{/each}}
+                              </select>
+                        </div>
+
+                        <div> <input type="text" name="mark6" class="form-control mt-1" ></div>
+                        <label id="not_sub4" style="display: none;">mark Cannot be empty</label>
+                        <div>
+                            <select name="subject7" class="form-select mt-2" aria-label="Default select example">
+                                <option selected>subject</option>
+                                
+                                {{#each sub}}
+                                <option value="{{this.subject7}}" >{{this.subject7}}</option>
+                             
+                                {{/each}}
+                              </select>
+                        </div>
+
+                        <div> <input type="text" name="mark7" class="form-control mt-1" ></div>
+                        <label id="not_sub4" style="display: none;">mark Cannot be empty</label>
+                        <div>
+                            <select name="subject8" class="form-select mt-2" aria-label="Default select example">
+                                <option selected>subject</option>
+                                
+                                {{#each sub}}
+                                <option value="{{this.subject8}}" >{{this.subject8}}</option>
+                             
+                                {{/each}}
+                              </select>
+                        </div>
+
+                        <div> <input type="text" name="mark8" class="form-control mt-1" ></div>
+                        <label id="not_sub4" style="display: none;">mark Cannot be empty</label>
+
+                        <div>
+                            <select name="subject9" class="form-select mt-2" aria-label="Default select example">
+                                <option selected>subject</option>
+                                
+                                {{#each sub}}
+                                <option value="{{this.subject9}}" >{{this.subject9}}</option>
+                             
+                                {{/each}}
+                              </select>
+                        </div>
+
+                        <div> <input type="text" name="mark9" class="form-control mt-1" ></div>
+                        <label id="not_sub4" style="display: none;">mark Cannot be empty</label>
+                        <div>
+                            <select name="subject10" class="form-select mt-2" aria-label="Default select example">
+                                <option selected>subject</option>
+                                
+                                {{#each sub}}
+                                <option value="{{this.subject10}}" >{{this.subject10}}</option>
+                             
+                                {{/each}}
+                              </select>
+                        </div>
+
+                        <div> <input type="text" name="mark10" class="form-control mt-1" ></div>
+                        <label id="not_sub4" style="display: none;">mark Cannot be empty</label>
+          
+           
+                          <input type="submit" value="submit" style=" width: 500px;" class="btn btn-primary mt-3 ">  
+                      </form>
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        {{#each data}}
+        <table class="table mt-3">
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">{{this.subject1}}</th>
+                <th scope="col">{{this.subject2}}</th>
+                <th scope="col">{{this.subject3}}</th>
+                <th scope="col">{{this.subject4}}</th>
+                <th scope="col">{{this.subject5}}</th>
+                <th scope="col">{{this.subject6}}</th>
+                <th scope="col">{{this.subject7}}</th>
+                <th scope="col">{{this.subject8}}</th>
+                <th scope="col">{{this.subject9}}</th>
+                <th scope="col">{{this.subject10}}</th>
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{this.name}}</td>
+                <td>{{this.mark1}}</td>
+                <td>{{this.mark2}}</td>
+                <td>{{this.mark3}}</td>
+                <td>{{this.mark4}}</td>
+                <td>{{this.mark5}}</td>
+                <td>{{this.mark6}}</td>
+                <td>{{this.mark7}}</td>
+                <td>{{this.mark8}}</td>
+                <td>{{this.mark9}}</td>
+                <td>{{this.mark10}}</td>
+      
+              </tr>
+                    
+              
+            </tbody>
+        </table>
+        {{/each}}
+    </section>
+    
+    
+
+    <footer>
+        <div class="bg-primary mt-5" style="height: 70px; width: 100%;">
+
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+</body>
+</html>
